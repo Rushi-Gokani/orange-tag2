@@ -239,6 +239,22 @@
       right: 10px;
     }
 
+    /* Mobile-specific adjustment */
+    @media (max-width: 767px) {
+      .nav-btn {
+        top: auto;
+        bottom: 0px;
+        transform: none;
+      }
+
+      .prev {
+        left: 40%;
+      }
+
+      .next {
+        right: 40%;
+      }
+    }
     /* Hide scrollbar for the slider container if overflow */
     .slider-container::-webkit-scrollbar {
       display: none;
@@ -775,7 +791,11 @@
                         class="img-fluid mb-2"
                       />
                       <p class="text-muted small">
-                        Scan the code to explore our latest work in real-time.
+                        <a
+                          href="https://drive.google.com/file/d/1hTgZ_TA__5TaoWZq0baJspv7VLNr3pbu/view?usp=sharing"
+                          >Scan to view our latest work, or click here to
+                          explore our deck.
+                        </a>
                       </p>
                     </div>
                   </div>
