@@ -174,7 +174,10 @@
       .desktop-banner {
         display: none;
       }
-
+      .h1,
+      h1 {
+        font-size: 45px !important;
+      }
       .mobile-banner {
         display: block;
       }
@@ -197,19 +200,18 @@
     }
     /* -------------------------Slider------------------------- */
     .slider-container {
-      position: relative;
-      max-width: 1600px;
-      margin: 0 auto;
-      overflow: hidden;
+      position: relative; /* already done, ensures nav-btns position relative to this */
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
     }
 
-    /* The slider track: the row that slides */
     #slider-track {
       display: flex;
+      flex-wrap: nowrap;
       transition: transform 0.4s ease;
       will-change: transform;
-      /* prevent wrapping */
-      flex-wrap: nowrap;
     }
 
     /* Your product cards use bootstrap col classes, so ensure no shrink */
@@ -220,19 +222,20 @@
 
     /* Navigation buttons */
     .nav-btn {
-      position: absolute;
+      position: absolute; /* Keep them absolute within .slider-container */
       top: 50%;
       transform: translateY(-50%);
-      background: rgb(255, 255, 255);
+      background: white;
       border: none;
-      color: rgb(1, 1, 1);
+      color: black;
       font-size: 24px;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100; /* Ensure above slider content */
       user-select: none;
+      pointer-events: auto; /* allow clicks even on overlay */
     }
 
     .nav-btn:hover {
@@ -253,6 +256,7 @@
         top: auto;
         bottom: 0px;
         transform: none;
+        display: none;
       }
 
       .prev {
@@ -882,7 +886,6 @@
                 </div>
                 <div class="slider-container">
                   <button class="nav-btn prev" id="prev">&#10094;</button>
-                  <button class="nav-btn next" id="next">&#10095;</button>
                   <div class="row" id="slider-track">
                     <div class="col-6 col-md-3 col-lg-2 product-card">
                       <div
@@ -909,7 +912,7 @@
                               />
                             </div>
                             <h6 class="ptf-partner-box__title">
-                              R Kumar Opticians
+                              R. Kumar Opticians
                             </h6>
                           </div>
                         </a>
@@ -939,9 +942,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">
-                              Ultrapop Foods
-                            </h6>
+                            <h6 class="ptf-partner-box__title">Ultra Pop</h6>
                           </div>
                         </a>
                       </div>
@@ -1036,7 +1037,7 @@
                               />
                             </div>
                             <h6 class="ptf-partner-box__title">
-                              Sheetal Infra
+                              Sheetal Infrastructure
                             </h6>
                           </div>
                         </a>
@@ -1126,7 +1127,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Chill Fill</h6>
+                            <h6 class="ptf-partner-box__title">
+                              ChillFill Foods
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1213,7 +1216,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">One Way.Cab</h6>
+                            <h6 class="ptf-partner-box__title">OneWay.Cab</h6>
                           </div>
                         </a>
                       </div>
@@ -1242,7 +1245,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Serein</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Serein Wellness
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1302,7 +1307,7 @@
                               />
                             </div>
                             <h6 class="ptf-partner-box__title">
-                              Pee gee Fabrics
+                              Pee Gee Fabrics
                             </h6>
                           </div>
                         </a>
@@ -1362,7 +1367,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">079 Stories</h6>
+                            <h6 class="ptf-partner-box__title">079|STORIES</h6>
                           </div>
                         </a>
                       </div>
@@ -1424,7 +1429,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Spitze</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Spitze by Everyday
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1453,7 +1460,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Cookezy</h6>
+                            <h6 class="ptf-partner-box__title">Cook’ezy</h6>
                           </div>
                         </a>
                       </div>
@@ -1511,7 +1518,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Turtlefeet</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Turtlefeet Company
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1569,7 +1578,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Earthveda</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Earthveda Tea
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1598,7 +1609,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Toska</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Toska Chocolate House
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1627,9 +1640,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">
-                              Akshar Travels
-                            </h6>
+                            <h6 class="ptf-partner-box__title">Akshar Tours</h6>
                           </div>
                         </a>
                       </div>
@@ -1658,7 +1669,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">DrinkTales</h6>
+                            <h6 class="ptf-partner-box__title">Drinktales</h6>
                           </div>
                         </a>
                       </div>
@@ -1719,7 +1730,7 @@
                               />
                             </div>
                             <h6 class="ptf-partner-box__title">
-                              House Of TatvĀ
+                              House Of Tatva
                             </h6>
                           </div>
                         </a>
@@ -1750,7 +1761,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">KK Jewels</h6>
+                            <h6 class="ptf-partner-box__title">
+                              KK Jewels Diamond Boutique
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1780,7 +1793,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Bodhi</h6>
+                            <h6 class="ptf-partner-box__title">BODHI</h6>
                           </div>
                         </a>
                       </div>
@@ -1810,7 +1823,7 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Azula</h6>
+                            <h6 class="ptf-partner-box__title">Azula Studio</h6>
                           </div>
                         </a>
                       </div>
@@ -1840,7 +1853,9 @@
                                 loading="lazy"
                               />
                             </div>
-                            <h6 class="ptf-partner-box__title">Royal Page</h6>
+                            <h6 class="ptf-partner-box__title">
+                              Royal Page Co
+                            </h6>
                           </div>
                         </a>
                       </div>
@@ -1935,6 +1950,7 @@
                       </div>
                     </div>
                   </div>
+                  <button class="nav-btn next" id="next">&#10095;</button>
                 </div>
                 <!--Spacer-->
                 <!---paste this-->
